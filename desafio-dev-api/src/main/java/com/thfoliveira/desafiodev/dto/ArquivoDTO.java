@@ -3,8 +3,6 @@ package com.thfoliveira.desafiodev.dto;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.thfoliveira.desafiodev.domain.Transacao;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,5 +20,5 @@ public class ArquivoDTO {
 	
 	private String path;
 	
-	private List<Transacao> transacoes;
+	private List<TransacaoDTO> transacoes;
 }

@@ -2,8 +2,6 @@ package com.thfoliveira.desafiodev.dto;
 
 import java.util.List;
 
-import com.thfoliveira.desafiodev.domain.Transacao;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +17,6 @@ public class LojaDTO {
 	
 	private DonoDTO dono;
 	
-	private List<Transacao> transacoes;
+	private List<TransacaoDTO> transacoes;
 	
 }
