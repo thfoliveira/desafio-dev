@@ -1,0 +1,19 @@
+version: '3.8'
+
+networks:
+  connect:
+    driver: bridge
+
+services:
+  mysql-desafio-dev:
+    container_name: mysql-desafio-dev
+    image: mysql:5.7
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWOR: 1
+      MYSQL_DATABASE: desafio-dev
+    volumes:
+      - './mysql/data:/var/lib/mysql'
+    ports:
+      - '3306:3306'
+    networks:
+      - connect
