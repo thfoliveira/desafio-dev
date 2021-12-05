@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.thfoliveira.desafiodev.dto.ResultadoImportacaoDTO;
+import com.thfoliveira.desafiodev.exception.ArquivoVazioException;
+import com.thfoliveira.desafiodev.exception.FormatoArquivoInvalidoException;
 import com.thfoliveira.desafiodev.services.command.UploadArquivoComTransacoesCommand;
 import com.thfoliveira.desafiodev.services.handler.UploadArquivoComTransacoesHandler;
 
@@ -18,7 +20,7 @@ public class TransacaoRestController {
 	private @Autowired UploadArquivoComTransacoesHandler handler;
 	
 	@PostMapping("/upload")
-	public ResponseEntity<ResultadoImportacaoDTO> uploadTransacoes(MultipartFile cnab) {		
+	public ResponseEntity<ResultadoImportacaoDTO> uploadTransacoes(MultipartFile cnab) throws ArquivoVazioException, FormatoArquivoInvalidoException {		
 		ResultadoImportacaoDTO resultado = handler.execute(new UploadArquivoComTransacoesCommand(cnab));
 		
 		if (resultado.temErros())
