@@ -16,10 +16,12 @@ import com.thfoliveira.desafiodev.domain.enums.TipoTransacaoEnum;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Transacao {
 
 	@Id
